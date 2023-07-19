@@ -6,7 +6,7 @@ namespace RestService.DataMapper;
 public class UserMapper : IDataMapper<User>
 {
         public User Map(IDataRecord data) => new User(
-            data.GetInt32(0),
-            data.GetString(1), 
-            data.GetString(2));
+            ID: data.GetInt32(0),
+            Username: data.GetString(1), 
+            Password: data.GetString(2));
 }
