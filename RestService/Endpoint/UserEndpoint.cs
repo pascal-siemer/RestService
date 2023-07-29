@@ -11,13 +11,8 @@ public class UserEndpoint : IEndpoint<User>
     private IDatabaseDriver _driver;
     private IDataMapper<User> _mapper;
 
-    private string _query = """
-        SELECT  [ID],
-                [Username],
-                [Password]
-        FROM [Gameshow].[dbo].[Users];
-        """;
-    
+    private string _query = @"select ID, Username, Password from main.Users";
+
     public UserEndpoint(IDatabaseDriver driver, IDataMapper<User> mapper)
     {
         _driver = driver;
